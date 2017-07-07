@@ -39,9 +39,9 @@ mailer.extend(app, {
   }
 });
 
-// this is dumb
-app.get('/', function(request, response) {
-  response.render('pages/index')
+// this is dumb testing stuff
+app.get('/cool', function(request, response) {
+  response.send(cool());
 });
 
 app.get('/', (req, res) =>{
