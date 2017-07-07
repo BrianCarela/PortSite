@@ -6,6 +6,10 @@ const express = require('express'),
       mustacheExpress = require('mustache-express'),
       PORT = process.env.PORT || 3000;
 
+// testing local heroku changes
+var cool = require('cool-ascii-faces');
+
+
 //hook up app
 const app = express();
 app.set('views', __dirname+'/views');
@@ -33,6 +37,11 @@ mailer.extend(app, {
     user: 'briancarela@gmail.com',
     password: process.env.GMAIL_PASS
   }
+});
+
+// this is dumb
+app.get('/', function(request, response) {
+  response.render('pages/index')
 });
 
 app.get('/', (req, res) =>{
